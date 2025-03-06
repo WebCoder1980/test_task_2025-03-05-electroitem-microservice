@@ -10,7 +10,6 @@ CREATE TABLE IF NOT EXISTS electro_item_type (
     CONSTRAINT electro_item_type_pkey PRIMARY KEY (id_)
 );
 
-/* ElectroItem */
 CREATE TABLE IF NOT EXISTS electro_item (
     id_ int8 NOT NULL,
     name varchar(150) NOT NULL,

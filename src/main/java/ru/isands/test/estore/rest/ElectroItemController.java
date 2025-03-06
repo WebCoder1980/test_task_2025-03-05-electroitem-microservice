@@ -83,7 +83,6 @@ public class ElectroItemController {
 	@PostMapping("/upload-csv")
 	@Operation(summary = "Загрузить товар из CSV", responses = {
 			@ApiResponse(responseCode = "200", description = "Товар успешно загружены"),
-			@ApiResponse(responseCode = "404", description = "Товар не найден", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorDTO.class))),
 			@ApiResponse(responseCode = "500", description = "Ошибка сервера", content = @Content(mediaType = "application/json", schema = @Schema(implementation = ErrorDTO.class)))
 	})
 	public ResponseEntity<String> uploadCSV(@RequestParam("file") MultipartFile file) {
