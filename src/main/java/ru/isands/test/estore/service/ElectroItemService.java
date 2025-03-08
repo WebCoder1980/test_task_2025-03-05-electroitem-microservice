@@ -12,6 +12,7 @@ import ru.isands.test.estore.dto.ElectroItemDTO;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -93,7 +94,12 @@ public class ElectroItemService {
                     isFirstLine = false;
                     continue;
                 }
+
                 String[] data = line.split(";");
+
+                if (data.length < 7) {
+                    throw new RuntimeException("Файл содержит меньше столбцов, чем нужно");
+                }
 
                 ElectroItemDTO electroItemDTO = new ElectroItemDTO();
                 electroItemDTO.setName(data[1].trim());
