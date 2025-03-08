@@ -116,7 +116,7 @@ public class ElectroItemService {
         List<ElectroItem> electroItems = electroItemDTOs.stream()
                 .map(this::mapToEntity)
                 .collect(Collectors.toList());
-        electroItemRepository.saveAll(electroItems);
+        electroItems.forEach(i -> electroItemRepository.save(i));
     }
 
     private ElectroItemDTO mapToDTO(ElectroItem electroitem) {

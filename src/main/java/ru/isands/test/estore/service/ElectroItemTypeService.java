@@ -81,7 +81,7 @@ public class ElectroItemTypeService {
         List<ElectroItemType> electroItemTypes = electroItemTypeDTOs.stream()
                 .map(this::mapToEntity)
                 .collect(Collectors.toList());
-        electroItemTypeRepository.saveAll(electroItemTypes);
+        electroItemTypes.forEach(i -> electroItemTypeRepository.save(i));
     }
 
     public void processCSVFile(MultipartFile file) {
