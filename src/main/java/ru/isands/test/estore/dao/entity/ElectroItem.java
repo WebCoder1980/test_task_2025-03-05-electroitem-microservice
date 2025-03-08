@@ -26,7 +26,7 @@ public class ElectroItem implements Serializable {
     private String name;
 
     @ManyToOne
-    @JoinColumn(name = "typeId", nullable = false)
+    @JoinColumn(name = "typeid", nullable = false)
     private ElectroItemType type;
 
     @Column(name = "price", nullable = false)
