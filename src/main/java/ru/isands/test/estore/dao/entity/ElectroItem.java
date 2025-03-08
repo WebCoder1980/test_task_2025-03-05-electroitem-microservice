@@ -17,7 +17,7 @@ public class ElectroItem implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE, generator = "electroitem_counter")
-    @TableGenerator(name = "electroitem_counter", pkColumnName = "name", pkColumnValue = "ru.isands.test.estore.dao.entity.ElectroItem", table = "counter", valueColumnName = "currentid", allocationSize = 2)
+    @TableGenerator(name = "electroitem_counter", pkColumnName = "name", pkColumnValue = "ru.isands.test.estore.dao.entity.ElectroItem", table = "counter", valueColumnName = "currentid", allocationSize = 1)
     @Column(name = "id_", unique = true, nullable = false)
     @NotNull
     private Long id;
